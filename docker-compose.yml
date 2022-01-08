@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  build:
+    image: node:13
+    command: bash -c "npm ci && npm run build"
+    working_dir: /src
+    environment:
+      npm_config_cache: /cache/npm
+    volumes:
+      - .:/src:cached
+      - npm_cache:/cache/npm
+      - node_modules:/src/node_modules
+
+volumes:
+  npm_cache: {}
+  node_modules: {}
