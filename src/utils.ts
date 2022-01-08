@@ -248,6 +248,10 @@ export const getPRDescription = (body = '', details: JIRADetails): string => {
   const displayKey = details.key.toUpperCase();
 
   return `
+${body}
+
+---
+
 <details open>
   <summary><a href="${details.url}" title="${displayKey}" target="_blank">${displayKey}</a></summary>
   <br />
@@ -280,11 +284,7 @@ export const getPRDescription = (body = '', details: JIRADetails): string => {
 <!--
   do not remove this marker as it will break jira-lint's functionality.
   ${HIDDEN_MARKER}
--->
-
----
-
-${body}`;
+-->`;
 };
 
 /** Check if a PR is considered "huge". */
