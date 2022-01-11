@@ -33,7 +33,7 @@ inputs:
     default: false
   allowed_issue_statuses:
     description: |
-      A comma separated list of acceptable Jira issue statuses. You must provide a value for this if validate_issue_status is set to true
+      A comma or new line separated list of acceptable Jira issue statuses. You must provide a value for this if validate_issue_status is set to true
       Requires validate_issue_status to be set to true.
     required: false
     default: 'In Progress'

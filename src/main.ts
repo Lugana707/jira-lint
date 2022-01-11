@@ -150,7 +150,7 @@ async function run(): Promise<void> {
         });
       }
 
-      if (!isIssueStatusValid(VALIDATE_ISSUE_STATUS, ALLOWED_ISSUE_STATUSES.split(','), details)) {
+      if (!isIssueStatusValid(VALIDATE_ISSUE_STATUS, ALLOWED_ISSUE_STATUSES.split(/(,|\n)/), details)) {
         const invalidIssueStatusComment: IssuesCreateCommentParams = {
           ...commonPayload,
           body: getInvalidIssueStatusComment(details.status, ALLOWED_ISSUE_STATUSES),
